@@ -297,3 +297,39 @@ button:hover {
   border-radius: 4px;
   border-left: 3px solid #b59f3b;
 }
+
+.hint-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.hint-button-wrapper {
+  padding: 12px 16px;
+}
+
+.get-hint-button {
+  width: 100%;
+  padding: 10px;
+  background: #538d4e;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.get-hint-button:hover {
+  background: #6aa561;
+}
+
+.no-hints {
+  padding: 20px 16px;
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+}
+
+.hint-divider {
+  border-top: 2px solid #2a2a2b;
+}
