@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import type { AppState, Guess, Settings } from './lib/types';
 import { encodeState, decodeState } from './lib/url';
 import Header from './components/Header';
+import SettingsPanel from './components/SettingsPanel';
 import './App.css';
 
 function App() {
@@ -10,9 +11,8 @@ function App() {
   const [settings, setSettings] = useState<Settings>(initialState.settings);
   const [settingsOpen, setSettingsOpen] = useState(false);
 
-  // Setters will be used in Task 6+
+  // Keep void for guesses - still not used
   void setGuesses;
-  void setSettings;
 
   // Sync state to URL whenever it changes
   useEffect(() => {
@@ -28,6 +28,14 @@ function App() {
         settingsOpen={settingsOpen}
         onToggleSettings={() => setSettingsOpen(!settingsOpen)}
       />
+
+      {settingsOpen && (
+        <SettingsPanel
+          settings={settings}
+          onSettingsChange={setSettings}
+          onClose={() => setSettingsOpen(false)}
+        />
+      )}
 
       {/* Components will be added in subsequent tasks */}
       <div className="content">

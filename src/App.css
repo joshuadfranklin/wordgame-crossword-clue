@@ -68,3 +68,60 @@ body {
 button:hover {
   opacity: 0.8;
 }
+
+.settings-panel {
+  background: #111;
+  border-bottom: 1px solid #333;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.settings-label {
+  color: #888;
+  font-size: 13px;
+  width: 50px;
+}
+
+.settings-options {
+  display: flex;
+  gap: 4px;
+}
+
+.settings-option {
+  padding: 4px 10px;
+  background: #333;
+  color: #888;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.settings-option.active {
+  background: #538d4e;
+  color: #ffffff;
+}
+
+.settings-close {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.close-button {
+  padding: 5px 16px;
+  background: #2a2a2b;
+  color: #aaa;
+  border: 1px solid #444;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
