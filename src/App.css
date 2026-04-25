@@ -61,9 +61,6 @@ body {
   cursor: pointer;
 }
 
-.content {
-  padding: 16px;
-}
 
 button:hover {
   opacity: 0.8;
@@ -332,4 +329,45 @@ button:hover {
 
 .hint-divider {
   border-top: 2px solid #2a2a2b;
+}
+
+/* Add smooth transitions */
+button {
+  transition: all 0.15s ease;
+}
+
+.color-tile {
+  transition: background-color 0.15s ease;
+}
+
+/* Improve mobile responsiveness */
+@media (max-width: 500px) {
+  .app {
+    max-width: 100%;
+  }
+
+  .header {
+    padding: 10px 12px;
+  }
+
+  .header h1 {
+    font-size: 16px;
+  }
+
+  .guess-input {
+    width: 70px;
+  }
+
+  .color-tile {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+}
+
+/* Improve focus states for accessibility */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #538d4e;
+  outline-offset: 2px;
 }
