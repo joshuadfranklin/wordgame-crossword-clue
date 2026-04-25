@@ -3,6 +3,7 @@ import type { AppState, Guess, Settings } from './lib/types';
 import { encodeState, decodeState } from './lib/url';
 import Header from './components/Header';
 import SettingsPanel from './components/SettingsPanel';
+import GuessBoard from './components/GuessBoard';
 import './App.css';
 
 function App() {
@@ -10,9 +11,6 @@ function App() {
   const [guesses, setGuesses] = useState<Guess[]>(initialState.guesses);
   const [settings, setSettings] = useState<Settings>(initialState.settings);
   const [settingsOpen, setSettingsOpen] = useState(false);
-
-  // Keep void for guesses - still not used
-  void setGuesses;
 
   // Sync state to URL whenever it changes
   useEffect(() => {
@@ -37,12 +35,7 @@ function App() {
         />
       )}
 
-      {/* Components will be added in subsequent tasks */}
-      <div className="content">
-        <p>Guesses: {guesses.length}</p>
-        <p>Words: {settings.wordsCount}, Hints: {settings.hintsCount}</p>
-        <p>Settings: {settingsOpen ? 'Open' : 'Closed'}</p>
-      </div>
+      <GuessBoard guesses={guesses} onGuessesChange={setGuesses} />
     </div>
   );
 }

@@ -198,3 +198,15 @@ button:hover {
   cursor: pointer;
   padding: 0 4px;
 }
+
+.guess-board {
+  padding: 16px;
+}
+
+.guess-board-label {
+  color: #666;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
