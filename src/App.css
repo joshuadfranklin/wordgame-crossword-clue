@@ -125,3 +125,76 @@ button:hover {
   font-size: 13px;
   cursor: pointer;
 }
+
+.guess-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.guess-input {
+  width: 80px;
+  padding: 6px;
+  background: #1a1a1b;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.guess-input::placeholder {
+  color: #555;
+}
+
+.guess-input:focus {
+  outline: none;
+  border-color: #565758;
+}
+
+.color-tiles {
+  display: flex;
+  gap: 4px;
+}
+
+.color-tile {
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.color-tile.gray {
+  background: #3a3a3c;
+}
+
+.color-tile.yellow {
+  background: #b59f3b;
+}
+
+.color-tile.green {
+  background: #538d4e;
+}
+
+.color-tile.inactive {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.remove-button {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 4px;
+}
