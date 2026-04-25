@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { AppState, Guess, Settings } from './lib/types';
 import { encodeState, decodeState } from './lib/url';
+import Header from './components/Header';
 import './App.css';
 
 function App() {
@@ -23,18 +24,10 @@ function App() {
 
   return (
     <div className="app">
-      <div className="header">
-        <h1>Wordle Hint</h1>
-        <div className="header-actions">
-          <button
-            className={`settings-button ${settingsOpen ? 'active' : ''}`}
-            onClick={() => setSettingsOpen(!settingsOpen)}
-          >
-            ⚙ Settings
-          </button>
-          <button className="save-link-button">[ Save Link ]</button>
-        </div>
-      </div>
+      <Header
+        settingsOpen={settingsOpen}
+        onToggleSettings={() => setSettingsOpen(!settingsOpen)}
+      />
 
       {/* Components will be added in subsequent tasks */}
       <div className="content">
