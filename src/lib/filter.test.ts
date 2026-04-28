@@ -23,13 +23,6 @@ describe('filterCandidates', () => {
   });
 
   it('filters by multiple green constraints', () => {
-    const guesses: Guess[] = [
-      {
-        word: 'SPADE',
-        colors: ['green', 'yellow', 'gray', 'gray', 'green']
-      }
-    ];
-    const result = filterCandidates(guesses, candidates);
     // S at position 0 (green), E at position 4 (green), contains P (not at pos 1), no A, D
     // SPEED: S at 0 ✓, P at 1 ✗ (P can't be at 1 because it's yellow), E at 4? No, has D at 4 ✗
     // Actually, SPEED is S-P-E-E-D, so position 4 is D not E
@@ -119,14 +112,6 @@ describe('filterCandidates', () => {
   });
 
   it('handles duplicate letters with yellow and gray correctly', () => {
-    const candidates2 = ['ROBOT', 'FLOOR', 'TROOP', 'COLOR'];
-    const guesses: Guess[] = [
-      {
-        word: 'PROOF',
-        colors: ['gray', 'yellow', 'yellow', 'gray', 'gray']
-      }
-    ];
-    const result = filterCandidates(guesses, candidates2);
     // PROOF: P(0)-R(1)-O(2)-O(3)-F(4)
     // R at position 1 is yellow: contains R but not at position 1
     // O at position 2 is yellow: contains O but not at position 2
@@ -151,6 +136,12 @@ describe('filterCandidates', () => {
     //   Has 2 Os (pos 1 and 3), but only 1 confirmed → FAIL
     //
     // Actually, all should fail! Need better test case.
+    const guesses: Guess[] = [
+      {
+        word: 'PROOF',
+        colors: ['gray', 'yellow', 'yellow', 'gray', 'gray']
+      }
+    ];
     const betterCandidates = ['CORNY', 'DECOR', 'MOTOR'];
     const betterResult = filterCandidates(guesses, betterCandidates);
     // CORNY: C-O-R-N-Y
@@ -171,17 +162,6 @@ describe('filterCandidates', () => {
   });
 
   it('combines multiple guesses correctly', () => {
-    const guesses: Guess[] = [
-      {
-        word: 'CRISP',
-        colors: ['gray', 'gray', 'gray', 'green', 'yellow']
-      },
-      {
-        word: 'BUMPS',
-        colors: ['gray', 'gray', 'gray', 'green', 'green']
-      }
-    ];
-    const result = filterCandidates(guesses, candidates);
     // First guess: S at position 3 is green, contains P (not at pos 4), no C, R, I
     // Second guess: P at position 3 is green, S at position 4 is green, no B, U, M
     // Wait, position 3 can't be both S and P! Let me fix this.
