@@ -20,9 +20,22 @@ export default function GuessBoard({ guesses, onGuessesChange }: GuessBoardProps
     onGuessesChange(newGuesses);
   };
 
+  const handleAddGuess = () => {
+    if (canAddMore) {
+      onGuessesChange([...guesses, { word: '', colors: ['gray', 'gray', 'gray', 'gray', 'gray'] }]);
+    }
+  };
+
   return (
     <div className="guess-board">
-      <div className="guess-board-label">Your guesses</div>
+      <div className="guess-board-header">
+        <div className="guess-board-label">Your guesses</div>
+        {canAddMore && (
+          <button className="add-guess-button" onClick={handleAddGuess}>
+            + Add Guess
+          </button>
+        )}
+      </div>
       {guesses.map((guess, i) => (
         <GuessRow
           key={i}
@@ -31,13 +44,6 @@ export default function GuessBoard({ guesses, onGuessesChange }: GuessBoardProps
           onRemove={() => handleRemove(i)}
         />
       ))}
-      {canAddMore && (
-        <GuessRow
-          guess={null}
-          onChange={(guess) => onGuessesChange([...guesses, guess])}
-          onRemove={() => {}}
-        />
-      )}
     </div>
   );
 }
