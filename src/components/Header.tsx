@@ -22,7 +22,7 @@ export default function Header({ settingsOpen, onToggleSettings }: HeaderProps) 
   return (
     <>
       <div className="header">
-        <h1>Wordle Hint</h1>
+        <h1>Crossword Hint</h1>
         <div className="header-actions">
           <button
             className="help-button"
@@ -52,7 +52,7 @@ export default function Header({ settingsOpen, onToggleSettings }: HeaderProps) 
             <div className="help-content">
               <section>
                 <h3>1. Enter Your Guesses</h3>
-                <p>Click <strong>+ Add Guess</strong> to add a Wordle guess. Type a 5-letter word, then click each tile to cycle through colors:</p>
+                <p>Click <strong>+ Add Guess</strong> to add a guess. Type a 5-letter word, then click each tile to cycle through colors:</p>
                 <ul>
                   <li><span className="color-label green">Green</span> - Correct letter in correct position</li>
                   <li><span className="color-label yellow">Yellow</span> - Correct letter in wrong position</li>

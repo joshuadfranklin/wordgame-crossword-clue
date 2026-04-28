@@ -1,7 +1,7 @@
-import type { Guess, Color } from './types';
+import type { Guess } from './types';
 
 /**
- * Filter candidate words based on Wordle guess constraints.
+ * Filter candidate words based on guess constraints.
  *
  * @param guesses - Array of guesses with word and color feedback
  * @param candidates - Array of candidate words to filter
