@@ -22,7 +22,6 @@ export default function Header({ settingsOpen, onToggleSettings }: HeaderProps) 
   return (
     <>
       <div className="header">
-        <h1>Crossword Hint</h1>
         <div className="header-actions">
           <button
             className="help-button"
