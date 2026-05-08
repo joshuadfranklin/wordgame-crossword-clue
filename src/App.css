@@ -193,6 +193,15 @@ body {
   color: #ffffff;
 }
 
+.help-note {
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  font-style: italic;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
 button:hover {
   opacity: 0.8;
 }

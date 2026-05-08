@@ -79,6 +79,10 @@ export default function Header({ settingsOpen, onToggleSettings }: HeaderProps) 
                 <h3>4. Save & Share</h3>
                 <p>Click <strong>[ Save Link ]</strong> to copy the current URL. All your guesses and settings are saved in the link - perfect for sharing!</p>
               </section>
+
+              <section>
+                <p className="help-note">Crossword clues from Century Arcade xd</p>
+              </section>
             </div>
           </div>
         </div>
