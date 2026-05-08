@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, forwardRef } from 'react';
 import type { Guess, Color } from '../lib/types';
 
 interface GuessRowProps {
@@ -9,7 +9,7 @@ interface GuessRowProps {
 
 const COLOR_CYCLE: Color[] = ['gray', 'yellow', 'green'];
 
-export default function GuessRow({ guess, onChange, onRemove }: GuessRowProps) {
+const GuessRow = forwardRef<HTMLInputElement, GuessRowProps>(function GuessRow({ guess, onChange, onRemove }, ref) {
   const [word, setWord] = useState(guess?.word || '');
   const [colors, setColors] = useState<Color[]>(guess?.colors || ['gray', 'gray', 'gray', 'gray', 'gray']);
 
@@ -51,6 +51,7 @@ export default function GuessRow({ guess, onChange, onRemove }: GuessRowProps) {
   return (
     <div className="guess-row">
       <input
+        ref={ref}
         type="text"
         className="guess-input"
         value={word}
@@ -76,4 +77,6 @@ export default function GuessRow({ guess, onChange, onRemove }: GuessRowProps) {
       )}
     </div>
   );
-}
+});
+
+export default GuessRow;
