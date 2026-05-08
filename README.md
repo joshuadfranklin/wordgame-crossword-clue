@@ -2,6 +2,10 @@
 
 A React 19 SPA that provides crossword-style clues as hints for 5-letter word puzzles based on your guess constraints.
 
+See an example here:
+
+https://joshuadfranklin.github.io/wordgame-crossword-clue/?g=TRIED-XXXXX,SMOCK-XXXXX
+
 
 ## Overview
 
