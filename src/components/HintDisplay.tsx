@@ -20,7 +20,7 @@ export default function HintDisplay({ hints, currentIndex, onIndexChange }: Hint
     <div className="hint-display">
       <div className="hint-header">
         <div className="hint-mystery">
-          <div className="hint-label">Guess this next</div>
+          <div className="hint-label">CROSSWORD-STYLE HINT FOR YOUR NEXT GUESS</div>
           <div className="mystery-tiles">
             {[0, 1, 2, 3, 4].map(i => (
               <div key={i} className="mystery-tile">?</div>
