@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Guess, Settings, HintCandidate, CluesData } from '../lib/types';
 import { filterCandidates } from '../lib/filter';
 import HintDisplay from './HintDisplay';
@@ -22,6 +22,13 @@ export default function HintPanel({ guesses, settings, clues }: HintPanelProps) 
   const [hints, setHints] = useState<HintCandidate[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hasSearched, setHasSearched] = useState(false);
+
+  useEffect(() => {
+    if (guesses.length === 0) {
+      setHints([]);
+      setHasSearched(false);
+    }
+  }, [guesses.length]);
 
   const handleGetHint = () => {
     setHasSearched(true);
