@@ -77,7 +77,7 @@ export default function Header({ settingsOpen, onToggleSettings }: HeaderProps) 
 
               <section>
                 <h3>4. Save & Share</h3>
-                <p>Click <strong>[ Save Link ]</strong> to copy the current URL. All your guesses and settings are saved in the link - perfect for sharing!</p>
+                <p>Click <strong>[ Save Link ]</strong> to copy the current URL. The link includes your guesses and settings and can be shared.</p>
               </section>
 
               <section>
