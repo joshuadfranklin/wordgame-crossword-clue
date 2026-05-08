@@ -26,15 +26,26 @@ export default function GuessBoard({ guesses, onGuessesChange }: GuessBoardProps
     }
   };
 
+  const handleClear = () => {
+    onGuessesChange([]);
+  };
+
   return (
     <div className="guess-board">
       <div className="guess-board-header">
         <div className="guess-board-label">Your guesses</div>
-        {canAddMore && (
-          <button className="add-guess-button" onClick={handleAddGuess}>
-            + Add Guess
-          </button>
-        )}
+        <div className="guess-board-actions">
+          {canAddMore && (
+            <button className="add-guess-button" onClick={handleAddGuess}>
+              + Add Guess
+            </button>
+          )}
+          {guesses.length > 0 && (
+            <button className="clear-button" onClick={handleClear}>
+              Clear
+            </button>
+          )}
+        </div>
       </div>
       {guesses.map((guess, i) => (
         <GuessRow
