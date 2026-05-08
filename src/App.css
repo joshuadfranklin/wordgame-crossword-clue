@@ -271,7 +271,7 @@ button:hover {
 }
 
 .guess-input {
-  width: 80px;
+  width: 100px;
   padding: 6px;
   background: #1a1a1b;
   border: 1px solid #444;
@@ -539,7 +539,7 @@ button {
   }
 
   .guess-input {
-    width: 70px;
+    width: 88px;
   }
 
   .color-tile {
