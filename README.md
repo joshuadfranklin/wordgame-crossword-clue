@@ -1,6 +1,14 @@
-# Crossword Hint App
+# Crossword-style Hints
 
 A React 19 SPA that provides crossword-style clues as hints for 5-letter word puzzles based on your guess constraints.
+
+* Does NOT rank "best" next word, only possible words (though potentially only 1 word may be possible)
+* Fully self-contained, no database or API
+* Can be used with official [NYT Wordle game](https://www.nytimes.com/games/wordle/index.html)
+* Crossword clues from [Century Arcade xd](https://github.com/century-arcade/xd)
+
+![Screenshot SE](screenshot-SE.png)
+
 
 ## Setup
 
